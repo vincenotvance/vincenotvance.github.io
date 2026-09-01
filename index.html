@@ -12,6 +12,27 @@
     body { margin:0; color:var(--ink); background:radial-gradient(circle at 15% -10%, #1b3b57 0, transparent 36%), var(--bg); font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
     .wrap { width:min(1060px, calc(100% - 40px)); margin:auto; }
     header { padding:70px 0 38px; border-bottom:1px solid var(--line); }
+    .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hero-copy {
+  flex: 1;
+}
+
+.headshot {
+  width: 180px;
+  height: 180px;
+  flex: 0 0 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
     .eyebrow { margin:0 0 10px; color:var(--accent); letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; font-weight:700; }
     h1 { font-size:clamp(2.5rem, 7vw, 5rem); margin:0; letter-spacing:-.06em; line-height:1; }
     .headline { color:var(--accent2); font-size:clamp(1.05rem,2vw,1.35rem); font-weight:650; margin:18px 0 12px; }
@@ -41,15 +62,50 @@
     .tag { color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:.86rem; }
     .contact { display:flex; flex-wrap:wrap; gap:10px; }
     footer { border-top:1px solid var(--line); padding:24px 0 38px; color:var(--muted); font-size:.9rem; }
-    @media (max-width:760px) { .grid { grid-template-columns:1fr; } .metrics { grid-template-columns:1fr; } header { padding-top:48px; } }
-  </style>
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding-top: 48px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .headshot {
+    width: 140px;
+    height: 140px;
+    flex-basis: 140px;
+  }
+}  </style>
 </head>
 <body>
   <header>
     <div class="wrap">
-      <p class="eyebrow">San Francisco, California</p>
-      <h1>Vince Osorio</h1>
-      <p class="headline">Program Manager, Digital Experience · Agile Transformation Leader</p>
+      <div class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">San Francisco, California</p>
+    <h1>Vince Osorio</h1>
+    <p class="headline">
+      Program Manager, Digital Experience · Agile Transformation Leader
+    </p>
+  </div>
+
+  <img
+    class="headshot"
+    src="assets/images/vince-osorio-headshot.jpg"
+    alt="Professional headshot of Vince Osorio"
+  />
+</div>
       <p class="intro">Digital experience program leader with 10+ years delivering large-scale e-commerce, mobile, and omnichannel initiatives. I align Engineering, Product, UX, Marketing, and Editorial teams around scalable, data-informed work that improves customer experiences and business outcomes.</p>
       <nav aria-label="Page navigation">
         <a href="#impact">Impact</a>
